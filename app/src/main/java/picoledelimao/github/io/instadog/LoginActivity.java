@@ -11,7 +11,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 
+/**
+ * This activity describes the actions taken on login screen
+ * @author Abner M. C. Araujo
+ * @version 1.0
+ * @since 01.17.2016
+ */
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -29,6 +36,31 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button btLogin = (Button) findViewById(R.id.btLogin);
+        final EditText etLogin = (EditText) findViewById(R.id.etLogin);
+        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        btLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String login = etLogin.getText().toString();
+                String password = etPassword.getText().toString();
+                login(login, password);
+            }
+        });
+    }
+
+    /**
+     * This method is called when the login button is pressed
+     * @param login
+     *      Login filled in the login field
+     * @param password
+     *      Password filled in the password field
+     */
+    private void login(String login, String password) {
+        // TODO Replace the body of this method with the correct implementation
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

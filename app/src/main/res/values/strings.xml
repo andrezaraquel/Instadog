@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Instadog</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_logout">Sair</string>
     <string name="login_etLogin">Usuário</string>
     <string name="login_etPassword">Senha</string>
     <string name="login_btLogin">Entrar</string>
@@ -9,4 +11,8 @@
     <string name="signup_etPassword">Senha</string>
     <string name="signup_etRepeatPassword">Repetir senha</string>
     <string name="signup_btSignup">Cadastrar</string>
+    <string name="tab_home">Início</string>
+    <string name="tab_notifications">Notificações</string>
+    <string name="tab_following">Seguindo</string>
+    <string name="tab_followers">Seguidores</string>
 </resources>
