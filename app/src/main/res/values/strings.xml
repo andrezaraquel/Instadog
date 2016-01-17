@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Instadog</string>
+    <string name="login_etLogin">Usuário</string>
+    <string name="login_etPassword">Senha</string>
+    <string name="login_btLogin">Entrar</string>
+    <string name="login_btSignup">Não possui uma conta? Cadastre-se!</string>
+    <string name="signup_etLogin">Usuário</string>
+    <string name="signup_etEmail">E-mail</string>
+    <string name="signup_etPassword">Senha</string>
+    <string name="signup_etRepeatPassword">Repetir senha</string>
+    <string name="signup_btSignup">Cadastrar</string>
+</resources>
