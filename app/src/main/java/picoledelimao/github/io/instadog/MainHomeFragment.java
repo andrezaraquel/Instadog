@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 /**
  * Fragment for home tab in MainActivity tabbed menu
@@ -14,6 +14,8 @@ import android.widget.TextView;
  * @since 01.17.2016
  */
 public class MainHomeFragment extends Fragment implements RefreshableFragment {
+
+    private ListView mListView;
 
     public static MainHomeFragment newInstance() {
         return new MainHomeFragment();
@@ -25,7 +27,10 @@ public class MainHomeFragment extends Fragment implements RefreshableFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        mListView = (ListView) rootView.findViewById(R.id.listView);
+        mListView.setAdapter(new MainHomeListAdapter(getActivity()));
+        return rootView;
     }
 
     @Override

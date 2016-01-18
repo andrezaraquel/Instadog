@@ -25,20 +25,20 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
      * Tab icons for when there aren't any new unread message on selected tab
      */
     public static int[] TAB_ICONS = {
-        R.mipmap.ic_home_white_24dp,
-        R.mipmap.ic_notifications_white_24dp,
-        R.mipmap.ic_star_white_24dp,
-        R.mipmap.ic_people_white_24dp
+        R.mipmap.ic_home_white_48dp,
+        R.mipmap.ic_notifications_white_48dp,
+        R.mipmap.ic_star_white_48dp,
+        R.mipmap.ic_people_white_48dp
     };
 
     /**
      * Tab icons for when there are unread messages on selected tab
      */
     public static int[] TAB_ICONS_ACTIVE = {
-        R.mipmap.ic_home_white_24dp,
-        R.mipmap.ic_notifications_active_white_24dp,
-        R.mipmap.ic_star_white_24dp,
-        R.mipmap.ic_people_white_24dp
+        R.mipmap.ic_home_white_48dp,
+        R.mipmap.ic_notifications_active_white_48dp,
+        R.mipmap.ic_star_white_48dp,
+        R.mipmap.ic_people_white_48dp
     };
 
     private Context mContext;
