@@ -14,6 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/pref_title_save"
-        style="@style/BlueButton" />
+        style="@style/PrimaryButton" />
 
 </LinearLayout>

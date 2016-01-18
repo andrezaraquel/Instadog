@@ -2,8 +2,10 @@
     <string name="app_name">Instadog</string>
     <string name="title_activity_signup">Cadastrar</string>
     <string name="title_activity_settings">Configurações</string>
+    <string name="title_activity_new_post">Novo post</string>
     <string name="action_settings">Configurações</string>
     <string name="action_logout">Sair</string>
+    <string name="action_post">Postar</string>
     <string name="login_etLogin">Usuário</string>
     <string name="login_etPassword">Senha</string>
     <string name="login_btLogin">Entrar</string>
@@ -24,4 +26,5 @@
     <string name="pref_title_enable_notifications">Habilitar notificações</string>
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="photo_upload_select">Selecione arquivo</string>
+    <string name="new_post_description">Descrição</string>
 </resources>

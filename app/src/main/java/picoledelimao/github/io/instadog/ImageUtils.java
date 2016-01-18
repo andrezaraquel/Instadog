@@ -1,18 +1,12 @@
 package picoledelimao.github.io.instadog;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
 
 import java.io.File;
 

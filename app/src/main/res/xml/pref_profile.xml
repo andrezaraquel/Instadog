@@ -34,7 +34,7 @@
         android:maxLines="1" />
 
     <picoledelimao.github.io.instadog.SavePreference
-        android:key="save"
+        android:key="pref_save"
         android:layout="@layout/fragment_preference_save" />
 
 </PreferenceScreen>

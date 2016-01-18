@@ -33,11 +33,11 @@ public class SignupActivity extends AppCompatActivity {
         btSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String login = etLogin.getText().toString();
-                String email = etEmail.getText().toString();
-                String password = etPassword.getText().toString();
-                String repeatPassword = etRepeatPassword.getText().toString();
-                signup(login, email, password, repeatPassword);
+            String login = etLogin.getText().toString();
+            String email = etEmail.getText().toString();
+            String password = etPassword.getText().toString();
+            String repeatPassword = etRepeatPassword.getText().toString();
+            signup(login, email, password, repeatPassword);
             }
         });
     }
