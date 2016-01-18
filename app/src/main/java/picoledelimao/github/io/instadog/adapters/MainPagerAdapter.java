@@ -1,4 +1,4 @@
-package picoledelimao.github.io.instadog;
+package picoledelimao.github.io.instadog.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -12,6 +12,13 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.DynamicDrawableSpan;
 import android.text.style.ImageSpan;
+
+import picoledelimao.github.io.instadog.MainFollowersFragment;
+import picoledelimao.github.io.instadog.MainFollowingFragment;
+import picoledelimao.github.io.instadog.MainHomeFragment;
+import picoledelimao.github.io.instadog.MainNotificationsFragment;
+import picoledelimao.github.io.instadog.R;
+import picoledelimao.github.io.instadog.RefreshableFragment;
 
 /**
  * This pager adapter is used by the MainActivity tabbed menu to connect it to the fragments

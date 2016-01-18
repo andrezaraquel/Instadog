@@ -1,4 +1,4 @@
-package picoledelimao.github.io.instadog;
+package picoledelimao.github.io.instadog.utils;
 
 
 import android.graphics.Bitmap;

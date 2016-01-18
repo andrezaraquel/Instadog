@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import picoledelimao.github.io.instadog.adapters.MainHomeListAdapter;
+
 /**
  * Fragment for home tab in MainActivity tabbed menu
  * @author Abner M. C. Araujo
@@ -37,7 +39,7 @@ public class MainHomeFragment extends Fragment implements RefreshableFragment {
 
     @Override
     public void refresh() {
-        //  TODO Insert code with correct implementation here
+        if (mAdapter != null) mAdapter.notifyDataSetChanged();
     }
 
 }

@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import picoledelimao.github.io.instadog.adapters.MainFollowingListAdapter;
+
 /**
  * Fragment for following tab in MainActivity tabbed menu
  * @author Abner M. C. Araujo
@@ -38,7 +40,7 @@ public class MainFollowingFragment extends Fragment implements RefreshableFragme
 
     @Override
     public void refresh() {
-        //  TODO Insert code with correct implementation here
+        if (mAdapter != null) mAdapter.notifyDataSetChanged();
     }
 
 }

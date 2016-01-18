@@ -5,6 +5,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import picoledelimao.github.io.instadog.adapters.MainFollowersListAdapter;
+import picoledelimao.github.io.instadog.adapters.MainFollowingListAdapter;
 
 /**
  * Fragment for followers tab in MainActivity tabbed menu
@@ -13,6 +17,9 @@ import android.view.ViewGroup;
  * @since 01.17.2016
  */
 public class MainFollowersFragment extends Fragment implements RefreshableFragment {
+
+    private ListView mListView;
+    private MainFollowersListAdapter mAdapter;
 
     public static MainFollowersFragment newInstance() {
         return new MainFollowersFragment();
@@ -24,12 +31,16 @@ public class MainFollowersFragment extends Fragment implements RefreshableFragme
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_following, container, false);
+        mAdapter = new MainFollowersListAdapter(getActivity());
+        mListView = (ListView) rootView.findViewById(R.id.listView);
+        mListView.setAdapter(mAdapter);
+        return rootView;
     }
 
     @Override
     public void refresh() {
-        //  TODO Insert code with correct implementation here
+        if (mAdapter != null) mAdapter.notifyDataSetChanged();
     }
 
 }

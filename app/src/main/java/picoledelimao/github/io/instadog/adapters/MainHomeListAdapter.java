@@ -1,4 +1,4 @@
-package picoledelimao.github.io.instadog;
+package picoledelimao.github.io.instadog.adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import picoledelimao.github.io.instadog.utils.ImageUtils;
+import picoledelimao.github.io.instadog.R;
 
 /**
  * This adapter is used to list the posts in the main feed

@@ -1,4 +1,4 @@
-package picoledelimao.github.io.instadog;
+package picoledelimao.github.io.instadog.utils;
 
 // CREDITS TO: https://gist.github.com/Mariovc/f06e70ebe8ca52fbbbe2
 
@@ -21,6 +21,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+
+import picoledelimao.github.io.instadog.R;
 
 /**
  * Author: Mario Velasco Casquero

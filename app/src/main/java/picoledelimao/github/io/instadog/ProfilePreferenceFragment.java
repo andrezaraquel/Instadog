@@ -1,25 +1,18 @@
 package picoledelimao.github.io.instadog;
 
 
-import android.annotation.TargetApi;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
-import java.io.File;
+import picoledelimao.github.io.instadog.utils.ImagePicker;
+import picoledelimao.github.io.instadog.utils.ImageUtils;
 
 /**
  * This fragment shows general preferences only. It is used when the
@@ -47,7 +40,7 @@ public class ProfilePreferenceFragment extends PreferenceFragment {
             public void onClick(View view) {
                 Intent chooseImageIntent = ImagePicker.getPickImageIntent(getActivity());
                 getActivity().startActivityForResult(chooseImageIntent, SettingsActivity.PICK_IMAGE_ID);
-                ((SettingsActivity)getActivity()).setOnImagePickListener(new ImagePicker.OnImagePickListener() {
+                ((SettingsActivity) getActivity()).setOnImagePickListener(new ImagePicker.OnImagePickListener() {
                     @Override
                     public void onPickImage(Bitmap image) {
                         mPhoto = image;
