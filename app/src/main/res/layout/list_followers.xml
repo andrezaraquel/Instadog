@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/listUserPhoto"
         android:layout_margin="10dp"
+        android:clickable="true"
         style="@android:style/TextAppearance.Large"/>
 
 </RelativeLayout>

@@ -1,85 +1,62 @@
 package picoledelimao.github.io.instadog;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import picoledelimao.github.io.instadog.adapters.MainPagerAdapter;
+import picoledelimao.github.io.instadog.adapters.ProfilePagerAdapter;
+import picoledelimao.github.io.instadog.utils.ImageUtils;
 
 /**
- * This is the main activity, where things like timeline, followers and following are displayed
+ * This is the activity called to display the profile of a certain user. It's very similar to
+ * MainActivity with some minor differences
  * @author Abner M. C. Araujo
  * @version 1.0
- * @since 01.17.2016
+ * @since 01.18.2016
  */
-public class MainActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-    private MainPagerAdapter mMainPagerAdapter;
+    private ProfilePagerAdapter mProfilePagerAdapter;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getLogin());
         setSupportActionBar(toolbar);
-        mMainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mProfilePagerAdapter = new ProfilePagerAdapter(getSupportFragmentManager(), this);
 
         mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mMainPagerAdapter);
+        mViewPager.setAdapter(mProfilePagerAdapter);
 
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
         mTabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_new_photo);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotoNewPost();
-            }
-        });
-
         // Refresh activity informations
         refresh();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.action_settings:
-                gotoSettings();
-                break;
-            case R.id.action_logout:
-                logout();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     /**
      * Go to settings activity
      */
     private void gotoSettings() {
-       Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+       Intent intent = new Intent(ProfileActivity.this, SettingsActivity.class);
         startActivity(intent);
     }
 
@@ -87,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
      * Go to new post activity
      */
     private void gotoNewPost() {
-        Intent intent = new Intent(MainActivity.this, NewPostActivity.class);
+        Intent intent = new Intent(ProfileActivity.this, NewPostActivity.class);
         startActivity(intent);
     }
 
@@ -96,19 +73,16 @@ public class MainActivity extends AppCompatActivity {
      */
     private void refresh() {
         // setting tab icons and text
-        for (int i = 0; i < mMainPagerAdapter.getCount(); i++) {
+        for (int i = 0; i < mProfilePagerAdapter.getCount(); i++) {
             int numUnread = 0;
             switch (i) {
                 case 0:
                     numUnread = getNumHistories();
                     break;
                 case 1:
-                    numUnread = getNumNotifications();
-                    break;
-                case 2:
                     numUnread = getNumFollowing();
                     break;
-                case 3:
+                case 2:
                     numUnread = getNumFollowers();
                     break;
             }
@@ -122,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         // order fragments to refresh as well
-        mMainPagerAdapter.refresh();
+        mProfilePagerAdapter.refresh();
     }
 
     /**
@@ -130,15 +104,6 @@ public class MainActivity extends AppCompatActivity {
      * @return The number of unread histories on the news feed
      */
     private int getNumHistories() {
-        // TODO Replace the body of this method with the correct implementation
-        return 0;
-    }
-
-    /**
-     * Get number of unread notifications
-     * @return The number of unread notifications
-     */
-    private int getNumNotifications() {
         // TODO Replace the body of this method with the correct implementation
         return 0;
     }
@@ -162,13 +127,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when logout action on menu options is selected
+     * Get the user login
+     * @return The user login
      */
-    private void logout() {
+    private String getLogin() {
         // TODO Replace the body of this method with the correct implementation
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
-        finish();
+        return "joe";
     }
 
 }

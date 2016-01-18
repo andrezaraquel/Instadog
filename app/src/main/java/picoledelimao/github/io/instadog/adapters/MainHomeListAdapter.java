@@ -1,6 +1,7 @@
 package picoledelimao.github.io.instadog.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import picoledelimao.github.io.instadog.ProfileActivity;
 import picoledelimao.github.io.instadog.utils.ImageUtils;
 import picoledelimao.github.io.instadog.R;
 
@@ -73,6 +75,12 @@ public class MainHomeListAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 onFavoriteClick(i, view);
+            }
+        });
+        tvUserLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showProfile(i);
             }
         });
         return rootView;
@@ -179,6 +187,16 @@ public class MainHomeListAdapter extends BaseAdapter {
     private void unfavorite(int index, View view) {
         // TODO Replace the content of this method with the correct implementation
         view.setBackgroundResource(R.mipmap.ic_favorite_border_black_48dp);
+    }
+
+    /**
+     * Show the profile of the post owner
+     * @param index Index of the post
+     */
+    private void showProfile(int index) {
+        // TODO Replace the content of this method with the correct implementation
+        Intent intent = new Intent(mContext, ProfileActivity.class);
+        mContext.startActivity(intent);
     }
 
 }

@@ -1,6 +1,7 @@
 package picoledelimao.github.io.instadog.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import picoledelimao.github.io.instadog.ProfileActivity;
 import picoledelimao.github.io.instadog.utils.ImageUtils;
 import picoledelimao.github.io.instadog.R;
 
@@ -60,6 +62,12 @@ public class MainFollowingListAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 onUnfollowClick(i, view);
+            }
+        });
+        tvUserLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showProfile(i);
             }
         });
         return rootView;
@@ -126,6 +134,16 @@ public class MainFollowingListAdapter extends BaseAdapter {
     private void unfollow(int index, View view) {
         // TODO Replace the content of this method with the correct implementation
         ((Button)view).setText(mContext.getResources().getString(R.string.list_following_follow));
+    }
+
+    /**
+     * Show the profile of an user
+     * @param index Index of the user
+     */
+    private void showProfile(int index) {
+        // TODO Replace the content of this method with the correct implementation
+        Intent intent = new Intent(mContext, ProfileActivity.class);
+        mContext.startActivity(intent);
     }
 
 }
