@@ -56,8 +56,6 @@ public class ProfilePreferenceFragment extends PreferenceFragment {
                 });
             }
         });
-        final Preference prefName = findPreference("pref_name");
-        prefName.setSummary(getName());
         final Preference prefEmail = findPreference("pref_email");
         prefEmail.setSummary(getEmail());
         final Preference prefNewPassword = findPreference("pref_password");
@@ -66,15 +64,13 @@ public class ProfilePreferenceFragment extends PreferenceFragment {
         prefSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = PreferenceManager.getDefaultSharedPreferences(prefName.getContext())
-                        .getString(prefName.getKey(), "");
                 String email = PreferenceManager.getDefaultSharedPreferences(prefEmail.getContext())
                         .getString(prefEmail.getKey(), "");
                 String newPassword = PreferenceManager.getDefaultSharedPreferences(prefNewPassword
                         .getContext()).getString(prefNewPassword.getKey(), "");
                 String repeatNewPassword = PreferenceManager.getDefaultSharedPreferences(
                         prefRepeatNewPassword.getContext()).getString(prefRepeatNewPassword.getKey(), "");
-                save(mPhoto, name, email, newPassword, repeatNewPassword);
+                save(mPhoto, email, newPassword, repeatNewPassword);
             }
         });
     }
@@ -119,12 +115,11 @@ public class ProfilePreferenceFragment extends PreferenceFragment {
     /**
      * Save new user profile informations
      * @param photo The new user photo (null if none was provided)
-     * @param name The new user name
      * @param email The new user e-mail
      * @param newPassword The new user password (empty if none was provided)
      * @param repeatNewPassword The new user password repeat (empty if none was provided)
      */
-    public void save(Bitmap photo, String name, String email, String newPassword, String repeatNewPassword) {
+    public void save(Bitmap photo, String email, String newPassword, String repeatNewPassword) {
         // TODO Insert code with correct implementation here
     }
 

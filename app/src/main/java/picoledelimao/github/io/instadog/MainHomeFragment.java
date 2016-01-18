@@ -16,6 +16,7 @@ import android.widget.ListView;
 public class MainHomeFragment extends Fragment implements RefreshableFragment {
 
     private ListView mListView;
+    private MainHomeListAdapter mAdapter;
 
     public static MainHomeFragment newInstance() {
         return new MainHomeFragment();
@@ -28,8 +29,9 @@ public class MainHomeFragment extends Fragment implements RefreshableFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        mAdapter = new MainHomeListAdapter(getActivity());
         mListView = (ListView) rootView.findViewById(R.id.listView);
-        mListView.setAdapter(new MainHomeListAdapter(getActivity()));
+        mListView.setAdapter(mAdapter);
         return rootView;
     }
 

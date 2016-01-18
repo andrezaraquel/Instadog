@@ -27,4 +27,6 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="photo_upload_select">Selecione arquivo</string>
     <string name="new_post_description">Descrição</string>
+    <string name="list_following_unfollow">Deixar de seguir</string>
+    <string name="list_following_follow">Seguir</string>
 </resources>

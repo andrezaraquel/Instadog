@@ -45,8 +45,8 @@ public class MainHomeListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        View rootView = mInflater.inflate(R.layout.home_list, null);
+    public View getView(final int i, View view, ViewGroup viewGroup) {
+        View rootView = mInflater.inflate(R.layout.list_home, null);
         ImageView ivUserPhoto = (ImageView) rootView.findViewById(R.id.listUserPhoto);
         TextView tvUserLogin = (TextView) rootView.findViewById(R.id.listUserLogin);
         ImageView ivPhoto = (ImageView) rootView.findViewById(R.id.listPhoto);
@@ -66,6 +66,12 @@ public class MainHomeListAdapter extends BaseAdapter {
         }
         tvNumFavorites.setText("(" + getNumFavorites(i) + ")");
         tvNumComments.setText("(" + getNumComments(i) + ")");
+        ivFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onFavoriteClick(i, view);
+            }
+        });
         return rootView;
     }
 
@@ -137,6 +143,39 @@ public class MainHomeListAdapter extends BaseAdapter {
     private int getNumComments(int index) {
         // TODO Replace the content of this method with the correct implementation
         return 0;
+    }
+
+    /**
+     * This method is called when the favorite button is clicked
+     * @param index Index of the post
+     * @param view Button that triggered that event
+     */
+    private void onFavoriteClick(int index, View view) {
+        if (isFavorite(index)) {
+            unfavorite(index, view);
+        } else {
+            favorite(index, view);
+        }
+    }
+
+    /**
+     * Favorite a post
+     * @param index Index of the post
+     * @param view Button of favorite
+     */
+    private void favorite(int index, View view) {
+        // TODO Replace the content of this method with the correct implementation
+        view.setBackgroundResource(R.mipmap.ic_favorite_black_48dp);
+    }
+
+    /**
+     * Unfavorite a post
+     * @param index Index of the post
+     * @param view Button of favorite
+     */
+    private void unfavorite(int index, View view) {
+        // TODO Replace the content of this method with the correct implementation
+        view.setBackgroundResource(R.mipmap.ic_favorite_border_black_48dp);
     }
 
 }

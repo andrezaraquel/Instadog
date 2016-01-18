@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 /**
  * Fragment for following tab in MainActivity tabbed menu
@@ -14,17 +15,25 @@ import android.view.ViewGroup;
  */
 public class MainFollowingFragment extends Fragment implements RefreshableFragment {
 
+    private ListView mListView;
+    private MainFollowingListAdapter mAdapter;
+
     public static MainFollowingFragment newInstance() {
         return new MainFollowingFragment();
     }
 
     public MainFollowingFragment() {
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_following, container, false);
+        mAdapter = new MainFollowingListAdapter(getActivity());
+        mListView = (ListView) rootView.findViewById(R.id.listView);
+        mListView.setAdapter(mAdapter);
+        return rootView;
     }
 
     @Override
