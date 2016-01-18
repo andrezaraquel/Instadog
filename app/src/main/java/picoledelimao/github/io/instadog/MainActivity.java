@@ -66,12 +66,21 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_settings:
+                gotoSettings();
                 break;
             case R.id.action_logout:
                 logout();
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Go to settings activity
+     */
+    private void gotoSettings() {
+       Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     /**

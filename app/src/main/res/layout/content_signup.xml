@@ -19,6 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/signup_etLogin"
+        android:capitalize="none"
+        android:singleLine="true"
+        android:maxLines="1"
         style="@style/WhiteEditText" />
 
     <EditText
@@ -26,7 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/signup_etEmail"
-        android:inputType="textWebEmailAddress"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:maxLines="1"
         style="@style/WhiteEditText" />
 
     <EditText
@@ -35,6 +40,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/signup_etPassword"
         android:inputType="textPassword"
+        android:singleLine="true"
+        android:maxLines="1"
         style="@style/WhiteEditText" />
 
     <EditText
@@ -43,6 +50,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/signup_etRepeatPassword"
         android:inputType="textPassword"
+        android:singleLine="true"
+        android:maxLines="1"
         style="@style/WhiteEditText" />
 
     <Button
@@ -50,6 +59,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/signup_btSignup"
-        style="@style/OrangeButton" />
+        style="@style/BlueButton" />
 
 </LinearLayout>

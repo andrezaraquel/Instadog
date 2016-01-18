@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login_btLogin"
-            style="@style/OrangeButton"  />
+            style="@style/BlueButton"  />
 
     </LinearLayout>
 
